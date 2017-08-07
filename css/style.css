@@ -1,35 +1,36 @@
-
-.liczba10{
-    visibility: hidden;
+body{
+  background:#333;
 }
-/*
-img {
-    transition: all 0.5s;
-    transform-origin: 40% 0%;
+.cell{
+    width: 1em;  
+    height: 1em;
+    border:1px dashed rgba(255,255,255,0.1);
+    font-size:120px;
+/*    font-family:Frijole;*/
+    overflow: hidden;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-0.5em 0 0  -0.5em;
+    opacity:0;
+    animation:go 7s;
+    transform-origin:left bottom;
 }
-
-img{
-    animation-name: newyear;
-    animation-duration: 10s;
-    animation-iteration-count: 1;
-    }
-
-@keyframes newyear{
-    0% {
-        width: 20px;
-    }
-    25%{
-        transform: rotate(-37deg)        
-        }
-    50%{
-        width: 60%;
-    }
-    
-    75%{
-        transform: translate(200px, 100px);
-    }
-    100%{
-        width: 20px;
-    }
+.num{
+    position:absolute;
+    width: 1em;
+    color:#E53F39;
+    line-height: 1em;  
+    text-align: center;
+    text-shadow:1px 1px 2px rgba(255,255,255,.3);
+    animation:run 7s steps(7);
 }
-*/
+@keyframes run{
+    0%{top:0;}
+    100%{top:-7em;}
+}
+@keyframes go{
+  0%   {opacity:1;}
+  84%  {opacity:1;transform:rotate(0deg) scale(1);}
+  100% {opacity:0;transform:rotate(360deg) scale(.01);}
+}

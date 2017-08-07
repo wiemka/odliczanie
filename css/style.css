@@ -13,7 +13,7 @@ body{
     left:50%;
     margin:-0.5em 0 0  -0.5em;
     opacity:0;
-    animation:go 7s;
+    animation:go 11s;
     transform-origin:left bottom;
 }
 .num{
@@ -23,14 +23,28 @@ body{
     line-height: 1em;  
     text-align: center;
     text-shadow:1px 1px 2px rgba(255,255,255,.3);
-    animation:run 7s steps(7);
+    animation:run 11s steps(11);
+}
+
+.love{
+    position:absolute;
+    display: none;
+    width: 1em;
+    color:#E53F39;
+    line-height: 1em;  
+    text-align: center;
+    text-shadow:1px 1px 2px rgba(255,255,255,.3);
 }
 @keyframes run{
     0%{top:0;}
-    100%{top:-7em;}
+    100%{top:-11em;}
 }
+
 @keyframes go{
   0%   {opacity:1;}
   84%  {opacity:1;transform:rotate(0deg) scale(1);}
-  100% {opacity:0;transform:rotate(360deg) scale(.01);}
+  99% {opacity:0;transform:rotate(360deg) scale(.01);}
+    100% {
+        .love{display: inherit}
+    }
 }

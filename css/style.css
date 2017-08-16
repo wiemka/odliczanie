@@ -1,50 +1,36 @@
-body{
-  background:#333;
+body {
+    background: #333;
 }
-.cell{
-    width: 1em;  
+
+.countdown {
+    width: 1em;
     height: 1em;
-    border:1px dashed rgba(255,255,255,0.1);
-    font-size:120px;
-/*    font-family:Frijole;*/
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 120px;
     overflow: hidden;
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin:-0.5em 0 0  -0.5em;
-    opacity:0;
-    animation:go 11s;
-    transform-origin:left bottom;
-}
-.num{
-    position:absolute;
-    width: 1em;
-    color:#E53F39;
-    line-height: 1em;  
-    text-align: center;
-    text-shadow:1px 1px 2px rgba(255,255,255,.3);
-    animation:run 11s steps(11);
+    position: absolute;
+    /*    opacity: 0;*/
+    /*    animation: go 11s;*/
+    /*    transform-origin: left bottom;*/
 }
 
-.love{
-    position:absolute;
-    display: none;
+.numbers {
+    position: absolute;
     width: 1em;
-    color:#E53F39;
-    line-height: 1em;  
-    text-align: center;
-    text-shadow:1px 1px 2px rgba(255,255,255,.3);
-}
-@keyframes run{
-    0%{top:0;}
-    100%{top:-11em;}
+    color: #E53F39;
+    line-height: 1em;
+    /*    text-align: center;*/
+    /*    text-shadow: 1px 1px 2px rgba(255, 255, 255, .3);*/
+    animation-name: anime;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
 }
 
-@keyframes go{
-  0%   {opacity:1;}
-  84%  {opacity:1;transform:rotate(0deg) scale(1);}
-  99% {opacity:0;transform:rotate(360deg) scale(.01);}
+@keyframes anime {
+    0% {
+        top: 0;
+    }
     100% {
-        .love{display: inherit}
+        top: -11em;
     }
 }
